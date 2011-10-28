@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd ">
+
+	<!-- the application context definition for the springapp DispatcherServlet -->
+	<bean name="//inicio.xml"		class="com.usuario.empresa.web.administracion.controladores.InicioController" />
+	<bean name="/usuarios/*.xml" 	class="com.usuario.empresa.web.administracion.controladores.UsuarioController" />
+	<bean name="/mapas.xml" 	class="com.usuario.empresa.web.administracion.controladores.UsuarioController" />
+	<bean name="/google.xml" 	class="com.usuario.empresa.web.administracion.controladores.UsuarioController" />
+	<bean name="/puzzle.xml" 	class="com.usuario.empresa.web.administracion.controladores.UsuarioController" />
+	
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="cache" value="true" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".ftl" />
+	</bean>
+</beans>

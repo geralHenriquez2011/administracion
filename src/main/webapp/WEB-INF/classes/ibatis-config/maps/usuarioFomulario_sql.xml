@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="usuariosResult">
+	<!-- resultmaps -->
+	<resultMap id="usuarioResult" class="com.usuario.empresa.web.administracion.entidades.UsuarioFomulario">
+		<result property="id" 			column="ID" />
+		<result property="nombre" 		column="NOMBRE" />
+		<result property="email" 		column="EMAIL" />
+		<result property="password" 	column="PASSWORD" />
+	</resultMap>
+
+	
+	<insert id="insertarUsuario" parameterClass="java.util.HashMap">
+		<selectKey keyProperty="id" type="post" resultClass="long">
+<!-- 			MySQL "LAST_INSERT_ID() -->
+			SELECT CURRVAL(pg_get_serial_sequence('USUARIOS','id'))
+       </selectKey>		
+		INSERT INTO USUARIOS (nombre,email, password)
+		VALUES (#nombre#, #email#,#password#);
+	</insert>
+<!-- 	<update id="updateUsuario" parameterClass="com.usuario.empresa.web.administracion.entidades.Usuario"> -->
+<!-- 		UPDATE USUARIOS SET NOMBRE=#nombre#, EDAD=#edad# -->
+<!-- 		WHERE ID=#id#; -->
+<!-- 	</update> -->
+<!-- 	<delete id="deleteUsuario" parameterClass="int"> -->
+<!-- 		DELETE FROM USUARIOS -->
+<!-- 		WHERE ID=#value#; -->
+<!-- 	</delete> -->
+</sqlMap>

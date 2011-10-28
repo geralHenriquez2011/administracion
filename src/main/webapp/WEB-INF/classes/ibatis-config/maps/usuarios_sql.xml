@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="usuariosResult">
+	<!-- resultmaps -->
+	<resultMap id="usuarioResult" class="com.usuario.empresa.web.administracion.entidades.Usuario">
+		<result property="id" 		column="ID" />
+		<result property="nombre" 	column="NOMBRE" />
+		<result property="edad" 	column="EDAD" />
+	</resultMap>
+
+	<!-- sqls -->
+	<select id="getUsuarios" resultMap="usuarioResult">
+		SELECT C.ID, C.NOMBRE, C.EDAD
+		FROM USUARIOS AS C
+		ORDER BY C.NOMBRE;
+	</select>
+	<select id="getUsuario" parameterClass="int" resultMap="usuarioResult">
+		SELECT
+		C.ID, C.NOMBRE, C.EDAD
+		FROM USUARIOS AS C
+		WHERE C.ID=#value#;
+	</select>
+	<select id="getTotalUsuarios" resultClass="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM
+		USUARIOS ;
+	</select>
+	<insert id="insertUsuario" parameterClass="com.usuario.empresa.web.administracion.entidades.Usuario">
+		<selectKey keyProperty="id" type="post" resultClass="int">
+			SELECT
+			LAST_INSERT_ID() AS value
+       </selectKey>
+		INSERT USUARIOS (NOMBRE, EDAD)
+		VALUES (#nombre#, #edad#);
+	</insert>
+	<update id="updateUsuario" parameterClass="com.usuario.empresa.web.administracion.entidades.Usuario">
+		UPDATE USUARIOS SET NOMBRE=#nombre#, EDAD=#edad#
+		WHERE ID=#id#;
+	</update>
+	<delete id="deleteUsuario" parameterClass="int">
+		DELETE FROM USUARIOS
+		WHERE ID=#value#;
+	</delete>
+</sqlMap>

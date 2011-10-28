@@ -1,0 +1,29 @@
+#contenedorPrincipal{height: 600px;margin: 48px auto 0;width: 1111px;}
+/* #direccion{padding: 10px;position: relative; width: 618px;} */
+#contenedorMapaOpciones{ float: left;width: 100%;}
+#map_canvas{ position:relative;width:618px;height: 454px;border:5px solid #b2b2b2;padding:10px;border: 1px solid;margin-left: 10px;float: left;}
+#opcionesMapas{float: right;height: 476px;margin-right: 7px;margin-top: -478px;width: 447px;}
+/* #contenedor{padding: 10px;position: relative; width: 618px;} */
+#start{margin: 1px 10px 5px;width: 300px;}
+#end{margin: 2px 11px 5px;width: 300px;}
+img{cursor: pointer;text-align: center;margin: 0 auto 0 66px;}
+.ui-autocomplete {background-color: white;width: 300px;border: 1px solid #cfcfcf;list-style-type: none;padding-left: 0px;}
+h4{text-align: center;}
+
+
+#twtr-widget-1{float: right;margin-top: 43px; width: 254px;margin-right: 239px;}
+#meGusta{border:none; width:450px; height:80px;}
+#menu{width:600px}
+
+#menuPrincipal{width: 100%;float: right;}
+ul{list-style: none;float: right;}
+ul li {display: inline; margin-left: 10px;margin-right: 13px;}
+#contenedor{float: left;position: relative; width: 429px; height: 478px;}
+#wrapper{float: right;margin-right: 200px;}
+
+#puzzle{margin: 0 auto 0 66px;}
+#menuIzquierdo{height: 100%;margin-top: 98px;position: absolute;text-align: center; width: 282px;}
+
+button{float: left;}
+   
+/*     width: 638px; */
